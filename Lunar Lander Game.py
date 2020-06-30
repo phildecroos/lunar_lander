@@ -113,6 +113,7 @@ while main_loop:
     outer_game_loop = True
     pre_game_loop = True
     game_loop = True
+    overall_win = False
 
     # Show the start screen
     while start_loop:
