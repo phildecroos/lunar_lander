@@ -1,2 +1,2 @@
 # Lunar-Lander
-A lunar lander game made with python and pygame. It has 10 levels and uses different ways of displaying and moving objects across the screen, as well as displaying the speed and altitude of the player. It has a scoring system that gives the user points based on how close they are to the target, how fast they were moving, and how much fuel they had left.
+This is a video game that I made in Python with Pygame. (if you have those installed you could download this and play it too) Here's a demo of the game: <a href="https://www.youtube.com/watch?v=ixTvAfbv0Nk&ab_channel=Phil">video</a>
