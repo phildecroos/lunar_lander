@@ -18,10 +18,10 @@ extra_large_font = pygame.font.SysFont('courier', 100)
 
 # Set the non-object images to be used
 current_path = os.path.dirname(__file__)
-background = pygame.image.load(os.path.join(current_path, 'images/background.png'))
-explosion_medium = pygame.image.load(os.path.join(current_path, 'images/explosion_medium.png'))
-in_air_explosion_large = pygame.image.load(os.path.join(current_path, 'images/in_air_explosion_large.png'))
-player_thrusting = pygame.image.load(os.path.join(current_path, 'images/player_thrusting.png'))
+background = pygame.image.load(os.path.join(current_path, 'images\\background.png'))
+explosion_medium = pygame.image.load(os.path.join(current_path, 'images\explosion_medium.png'))
+in_air_explosion_large = pygame.image.load(os.path.join(current_path, 'images\in_air_explosion_large.png'))
+player_thrusting = pygame.image.load(os.path.join(current_path, 'images\player_thrusting.png'))
 
 # Define needed variables
 main_loop = True
@@ -45,7 +45,7 @@ overall_win_text = large_font.render('ALL MISSIONS COMPLETE', False, (0, 255, 0)
 
 class GameObject:
     def __init__(self, x, y, x_speed, y_speed, name):
-        self.image = pygame.image.load(os.path.join(current_path, "images/" + name + ".png"))
+        self.image = pygame.image.load(os.path.join(current_path, "images\\" + name + ".png"))
         self.x = x
         self.y = y
         self.x_speed = x_speed
