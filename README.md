@@ -1,2 +1,4 @@
-# Lunar-Lander
-This is a game that I made in Python with Pygame. To download and play the game click <a href="https://phillyboy99.itch.io/lunar-lander">here</a>. To watch a demo of the game click <a href="https://www.youtube.com/watch?v=ixTvAfbv0Nk&ab_channel=Phil">here</a>.
+# Lunar Lander
+A game where the player has to avoid obstacles and safely land on the moon for 10 different levels. It is written in Python using Pygame for the graphics.
+
+You can download and play the game <a href="https://phillyboy99.itch.io/lunar-lander">here</a>. <a href="https://www.youtube.com/watch?v=ixTvAfbv0Nk&ab_channel=Phil">Here</a> is a video demo of the game.
