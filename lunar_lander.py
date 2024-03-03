@@ -11,17 +11,23 @@ screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Lunar Lander")
 
 # Set the different fonts to be used
-small_font = pygame.font.SysFont('courier', 15)
-medium_font = pygame.font.SysFont('courier', 20)
-large_font = pygame.font.SysFont('courier', 50)
-extra_large_font = pygame.font.SysFont('courier', 100)
+small_font = pygame.font.SysFont("courier", 15)
+medium_font = pygame.font.SysFont("courier", 20)
+large_font = pygame.font.SysFont("courier", 50)
+extra_large_font = pygame.font.SysFont("courier", 100)
 
 # Set the non-object images to be used
 current_path = os.path.dirname(__file__)
-background = pygame.image.load(os.path.join(current_path, 'images\\background.png'))
-explosion_medium = pygame.image.load(os.path.join(current_path, 'images\explosion_medium.png'))
-in_air_explosion_large = pygame.image.load(os.path.join(current_path, 'images\in_air_explosion_large.png'))
-player_thrusting = pygame.image.load(os.path.join(current_path, 'images\player_thrusting.png'))
+background = pygame.image.load(os.path.join(current_path, "images\\background.png"))
+explosion_medium = pygame.image.load(
+    os.path.join(current_path, "images\explosion_medium.png")
+)
+in_air_explosion_large = pygame.image.load(
+    os.path.join(current_path, "images\in_air_explosion_large.png")
+)
+player_thrusting = pygame.image.load(
+    os.path.join(current_path, "images\player_thrusting.png")
+)
 
 # Define needed variables
 main_loop = True
@@ -37,15 +43,17 @@ score = 0
 high_score = 0
 
 # Define some text displays so they're available under all conditions
-score_text = medium_font.render('Score: ' + str(score), False, (255, 255, 255))
-overall_win_text = large_font.render('ALL MISSIONS COMPLETE', False, (0, 255, 0))
+score_text = medium_font.render("Score: " + str(score), False, (255, 255, 255))
+overall_win_text = large_font.render("ALL MISSIONS COMPLETE", False, (0, 255, 0))
 
 # Define the game objects class
 
 
 class GameObject:
     def __init__(self, x, y, x_speed, y_speed, name):
-        self.image = pygame.image.load(os.path.join(current_path, "images\\" + name + ".png"))
+        self.image = pygame.image.load(
+            os.path.join(current_path, "images\\" + name + ".png")
+        )
         self.x = x
         self.y = y
         self.x_speed = x_speed
@@ -126,10 +134,16 @@ while main_loop:
         display(background, 0, -524)
 
         # Set the text displays on the start screen
-        lunar_lander_text = extra_large_font.render('LUNAR LANDER', False, (255, 255, 255))
-        high_score_text = medium_font.render('High Score: ' + str(high_score), False, (255, 255, 255))
-        enter_text = small_font.render('Press enter to play.', False, (255, 255, 255))
-        overall_win_text = large_font.render('ALL MISSIONS COMPLETE', False, (0, 255, 0))
+        lunar_lander_text = extra_large_font.render(
+            "LUNAR LANDER", False, (255, 255, 255)
+        )
+        high_score_text = medium_font.render(
+            "High Score: " + str(high_score), False, (255, 255, 255)
+        )
+        enter_text = small_font.render("Press enter to play.", False, (255, 255, 255))
+        overall_win_text = large_font.render(
+            "ALL MISSIONS COMPLETE", False, (0, 255, 0)
+        )
 
         # Display the end screen text
         display(lunar_lander_text, 35, 190)
@@ -507,15 +521,25 @@ while main_loop:
             fuel_value = 50
 
         # Set the text displays on the game screen
-        score_text = medium_font.render('Score: ' + str(score), False, (255, 255, 255))
-        initial_level_display = large_font.render('Level ' + str(level), False, (255, 255, 255))
-        enter_text = small_font.render('Press enter to play.', False, (255, 255, 255))
-        level_display = medium_font.render('Level ' + str(level), False, (255, 255, 255))
-        v_display = medium_font.render('Descent: ' + str(round(player.y_speed, 1)) + 'm/s', False, (0, 255, 0))
-        h_display = medium_font.render('Speed: ' + str(round(abs(player.x_speed), 1)) + 'm/s', False, (0, 255, 0))
-        display_fuel = medium_font.render('Fuel: ' + str(int(fuel_value)) + '%', False, (0, 255, 0))
-        game_lose = large_font.render('MISSION FAILED', False, (255, 0, 0))
-        game_win = large_font.render('MISSION SUCCESS', False, (0, 255, 0))
+        score_text = medium_font.render("Score: " + str(score), False, (255, 255, 255))
+        initial_level_display = large_font.render(
+            "Level " + str(level), False, (255, 255, 255)
+        )
+        enter_text = small_font.render("Press enter to play.", False, (255, 255, 255))
+        level_display = medium_font.render(
+            "Level " + str(level), False, (255, 255, 255)
+        )
+        v_display = medium_font.render(
+            "Descent: " + str(round(player.y_speed, 1)) + "m/s", False, (0, 255, 0)
+        )
+        h_display = medium_font.render(
+            "Speed: " + str(round(abs(player.x_speed), 1)) + "m/s", False, (0, 255, 0)
+        )
+        display_fuel = medium_font.render(
+            "Fuel: " + str(int(fuel_value)) + "%", False, (0, 255, 0)
+        )
+        game_lose = large_font.render("MISSION FAILED", False, (255, 0, 0))
+        game_win = large_font.render("MISSION SUCCESS", False, (0, 255, 0))
 
         # Display the background images on the screen
         screen.fill((100, 100, 100))
@@ -525,7 +549,9 @@ while main_loop:
         while pre_game_loop:
 
             # Update the enter text
-            enter_text = small_font.render('Press enter to start.', False, (255, 255, 255))
+            enter_text = small_font.render(
+                "Press enter to start.", False, (255, 255, 255)
+            )
 
             # Display the text on the screen
             display(initial_level_display, 290, 200)
@@ -608,37 +634,62 @@ while main_loop:
             target.display()
 
             # Update the altitude text display
-            altitude = medium_font.render('Altitude: ' + str(int((530 - player.y))) + 'm', False, (255, 255, 255))
+            altitude = medium_font.render(
+                "Altitude: " + str(int((530 - player.y))) + "m", False, (255, 255, 255)
+            )
             if int(530 - player.y < 0):
-                altitude = medium_font.render('Altitude: 0m', False, (255, 255, 255))
+                altitude = medium_font.render("Altitude: 0m", False, (255, 255, 255))
 
             # Update the fuel text display
-            display_fuel = medium_font.render('Fuel: ' + str(int(fuel_value)) + '%', False, (0, 255, 0))
+            display_fuel = medium_font.render(
+                "Fuel: " + str(int(fuel_value)) + "%", False, (0, 255, 0)
+            )
             if fuel_value < 25:
-                display_fuel = medium_font.render('Fuel: ' + str(int(fuel_value)) + '%', False, (255, 255, 0))
+                display_fuel = medium_font.render(
+                    "Fuel: " + str(int(fuel_value)) + "%", False, (255, 255, 0)
+                )
             if fuel_value <= 0:
-                display_fuel = medium_font.render('Fuel: 0%', False, (255, 0, 0))
+                display_fuel = medium_font.render("Fuel: 0%", False, (255, 0, 0))
 
             # Update the descent display
             if round(player.y_speed, 1) < 1.5:
-                v_display = medium_font.render('Descent: ' + str(round(player.y_speed, 1)) + 'm/s', False, (0, 255, 0))
+                v_display = medium_font.render(
+                    "Descent: " + str(round(player.y_speed, 1)) + "m/s",
+                    False,
+                    (0, 255, 0),
+                )
             if 1.5 <= round(player.y_speed, 1) < 2:
-                v_display = medium_font.render('Descent: ' + str(round(player.y_speed, 1)) + 'm/s', False,
-                                               (255, 255, 0))
+                v_display = medium_font.render(
+                    "Descent: " + str(round(player.y_speed, 1)) + "m/s",
+                    False,
+                    (255, 255, 0),
+                )
             if round(player.y_speed, 1) >= 2:
-                v_display = medium_font.render('Descent: ' + str(round(player.y_speed, 1)) + 'm/s TOO FAST', False,
-                                               (255, 0, 0))
+                v_display = medium_font.render(
+                    "Descent: " + str(round(player.y_speed, 1)) + "m/s TOO FAST",
+                    False,
+                    (255, 0, 0),
+                )
 
             # Update the speed text display
             if round(abs(player.x_speed), 1) < 0.7:
-                h_display = medium_font.render('Speed: ' + str(round(abs(player.x_speed), 1)) + 'm/s', False,
-                                               (0, 255, 0))
+                h_display = medium_font.render(
+                    "Speed: " + str(round(abs(player.x_speed), 1)) + "m/s",
+                    False,
+                    (0, 255, 0),
+                )
             if 0.7 <= round(abs(player.x_speed), 1) < 1:
-                h_display = medium_font.render('Speed: ' + str(round(abs(player.x_speed), 1)) + 'm/s', False,
-                                               (255, 255, 0))
+                h_display = medium_font.render(
+                    "Speed: " + str(round(abs(player.x_speed), 1)) + "m/s",
+                    False,
+                    (255, 255, 0),
+                )
             if round(abs(player.x_speed), 1) >= 1:
-                h_display = medium_font.render('Speed: ' + str(round(abs(player.x_speed), 1)) + 'm/s TOO FAST', False,
-                                               (255, 0, 0))
+                h_display = medium_font.render(
+                    "Speed: " + str(round(abs(player.x_speed), 1)) + "m/s TOO FAST",
+                    False,
+                    (255, 0, 0),
+                )
 
             # Display the text display
             display_text()
@@ -661,8 +712,13 @@ while main_loop:
                     outer_game_loop = False
                     end_loop = True
                 for anything_else in env_objects:
-                    if anything.collided_with(anything_else) and anything != anything_else:
-                        display(in_air_explosion_large, anything.x - 16, anything.y - 16)
+                    if (
+                        anything.collided_with(anything_else)
+                        and anything != anything_else
+                    ):
+                        display(
+                            in_air_explosion_large, anything.x - 16, anything.y - 16
+                        )
                         anything.x_speed = 0
                         anything.y_speed = 0
                         anything_else.x_speed = 0
@@ -684,10 +740,16 @@ while main_loop:
                 if anything.y >= 530:
                     anything.x_speed = 0
                     anything.y_speed = 0
-                    if anything.name == "meteor_small" or anything.name == "meteor_large":
+                    if (
+                        anything.name == "meteor_small"
+                        or anything.name == "meteor_large"
+                    ):
                         display(explosion_medium, anything.x - 16, anything.y - 30)
                         delay += 1
-                    if delay >= 100 and (anything.name == "meteor_small" or anything.name == "meteor_large"):
+                    if delay >= 100 and (
+                        anything.name == "meteor_small"
+                        or anything.name == "meteor_large"
+                    ):
                         falling_objects.remove(anything)
                         env_objects.remove(anything)
                         delay = 0
@@ -695,15 +757,24 @@ while main_loop:
             # End the game loop when the player hits the ground
             if player.y >= 530:
                 # Win if the player is touching the target and not going too fast
-                if player.collided_with(target) == 1 and round(player.y_speed, 1) < 2 and round(abs(player.x_speed),
-                                                                                                1) < 1:
+                if (
+                    player.collided_with(target) == 1
+                    and round(player.y_speed, 1) < 2
+                    and round(abs(player.x_speed), 1) < 1
+                ):
                     # Give them a score based on their location, speeds, and remaining fuel
                     score += int(
-                        1000 - 40 * abs(player.x - (target.x + 13)) + 10 * fuel_value + 1000 * (2 - player.y_speed)
-                        + 1000 * (1 - abs(player.x_speed)))
+                        1000
+                        - 40 * abs(player.x - (target.x + 13))
+                        + 10 * fuel_value
+                        + 1000 * (2 - player.y_speed)
+                        + 1000 * (1 - abs(player.x_speed))
+                    )
 
                     # Update the score text display
-                    score_text = medium_font.render('Score: ' + str(score), False, (255, 255, 255))
+                    score_text = medium_font.render(
+                        "Score: " + str(score), False, (255, 255, 255)
+                    )
 
                     # Display the background images on the screen
                     screen.fill((100, 100, 100))
@@ -717,7 +788,9 @@ while main_loop:
                         high_score = score
 
                     # Update the enter text
-                    enter_text = small_font.render('Press enter to go to the next level.', False, (255, 255, 255))
+                    enter_text = small_font.render(
+                        "Press enter to go to the next level.", False, (255, 255, 255)
+                    )
 
                     if level == 10:
                         level_win_loop = False
@@ -775,8 +848,12 @@ while main_loop:
     while end_loop:
 
         # Set the text displays on the end screen
-        high_score_text = medium_font.render('High Score: ' + str(high_score), False, (255, 255, 255))
-        enter_text = small_font.render('Press enter to return to the start screen.', False, (255, 255, 255))
+        high_score_text = medium_font.render(
+            "High Score: " + str(high_score), False, (255, 255, 255)
+        )
+        enter_text = small_font.render(
+            "Press enter to return to the start screen.", False, (255, 255, 255)
+        )
 
         # Display the end screen text
         if overall_win:
